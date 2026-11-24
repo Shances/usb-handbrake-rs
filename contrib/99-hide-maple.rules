@@ -1,0 +1,3 @@
+# Oculta o dispositivo bruto LeafLabs Maple (1eaf:0024) para que só o "USB Analog Handbrake" virtual apareça.
+# Copie para /etc/udev/rules.d/ e rode: sudo udevadm control --reload-rules && sudo udevadm trigger
+SUBSYSTEM=="input", ATTRS{idVendor}=="1eaf", ATTRS{idProduct}=="0024", MODE="0000", TAG-="uaccess", ENV{ID_INPUT}="", ENV{ID_INPUT_JOYSTICK}="", ENV{ID_INPUT_KEY}=""

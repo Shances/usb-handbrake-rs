@@ -1,0 +1,14 @@
+# Serviço de usuário. Copie para ~/.config/systemd/user/ e rode:
+#   systemctl --user daemon-reload && systemctl --user enable --now handbrake-bridge
+[Unit]
+Description=USB Analog Handbrake Bridge (Rust)
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/usb-handbrake-bridge
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,8 @@
+# Calibração do freio de mão (copie para ~/.config/handbrake.toml).
+# O driver relê este arquivo sozinho quando ele muda: não precisa reiniciar o serviço.
+# Valores brutos do sensor vão de 0 (solto) a 1023 (puxado até o fim).
+
+min = 0          # folga da mola: abaixo disso conta como 0%
+max = 1023       # ponto de bloqueio: a partir disso conta como 100% (antes do batente)
+curva = 1.0      # 1.0 = linear | > 1 começo mais suave (hidráulico) | < 1 mais agressivo
+inverter = false # true se o freio estiver montado ao contrário
